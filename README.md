@@ -39,7 +39,7 @@ Sin dependencias externas. Sin base de datos que configurar. Sin `npm install`.
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/TU_USUARIO/galletas-puig-inventario.git
+git clone https://github.com/shairdiaz-cyber/galletas-puig-inventario.git
 
 # 2. Entrar al backend
 cd galletas-puig-inventario/src/backend
