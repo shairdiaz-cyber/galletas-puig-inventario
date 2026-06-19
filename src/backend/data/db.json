@@ -1,0 +1,358 @@
+{
+  "productos": [
+    {
+      "id": "P01",
+      "nombre": "Harina de trigo",
+      "categoria": "Materia Prima",
+      "linea": "General",
+      "unidad": "kg",
+      "stockMinimo": 200,
+      "bodega": "Bodega de Insumos",
+      "stockActual": 540,
+      "fechaCreacion": "2026-05-26"
+    },
+    {
+      "id": "P02",
+      "nombre": "Azúcar blanca",
+      "categoria": "Materia Prima",
+      "linea": "General",
+      "unidad": "kg",
+      "stockMinimo": 150,
+      "bodega": "Bodega de Insumos",
+      "stockActual": 520,
+      "fechaCreacion": "2026-05-26"
+    },
+    {
+      "id": "P03",
+      "nombre": "Mantequilla",
+      "categoria": "Materia Prima",
+      "linea": "General",
+      "unidad": "kg",
+      "stockMinimo": 80,
+      "bodega": "Bodega de Insumos",
+      "stockActual": 210,
+      "fechaCreacion": "2026-05-26"
+    },
+    {
+      "id": "P04",
+      "nombre": "Avena en hojuelas",
+      "categoria": "Materia Prima",
+      "linea": "Línea Avena",
+      "unidad": "kg",
+      "stockMinimo": 100,
+      "bodega": "Bodega de Insumos",
+      "stockActual": 320,
+      "fechaCreacion": "2026-05-26"
+    },
+    {
+      "id": "P05",
+      "nombre": "Chocolate en gotas",
+      "categoria": "Materia Prima",
+      "linea": "Línea Chocolate",
+      "unidad": "kg",
+      "stockMinimo": 90,
+      "bodega": "Bodega de Insumos",
+      "stockActual": 170,
+      "fechaCreacion": "2026-05-26"
+    },
+    {
+      "id": "P06",
+      "nombre": "Esencia de vainilla",
+      "categoria": "Materia Prima",
+      "linea": "General",
+      "unidad": "L",
+      "stockMinimo": 15,
+      "bodega": "Bodega de Insumos",
+      "stockActual": 32,
+      "fechaCreacion": "2026-05-26"
+    },
+    {
+      "id": "P07",
+      "nombre": "Bolsas de empaque",
+      "categoria": "Materia Prima",
+      "linea": "General",
+      "unidad": "unidades",
+      "stockMinimo": 2000,
+      "bodega": "Bodega de Empaques",
+      "stockActual": 4200,
+      "fechaCreacion": "2026-05-26"
+    },
+    {
+      "id": "P08",
+      "nombre": "Cajas de cartón",
+      "categoria": "Materia Prima",
+      "linea": "General",
+      "unidad": "unidades",
+      "stockMinimo": 500,
+      "bodega": "Bodega de Empaques",
+      "stockActual": 1380,
+      "fechaCreacion": "2026-05-26"
+    },
+    {
+      "id": "P09",
+      "nombre": "Galleta de Avena x 200 g",
+      "categoria": "Producto Terminado",
+      "linea": "Línea Avena",
+      "unidad": "unidades",
+      "stockMinimo": 300,
+      "bodega": "Bodega de Producto Terminado",
+      "stockActual": 300,
+      "fechaCreacion": "2026-05-26"
+    },
+    {
+      "id": "P10",
+      "nombre": "Galleta Wafer de Chocolate x 150 g",
+      "categoria": "Producto Terminado",
+      "linea": "Línea Wafer",
+      "unidad": "unidades",
+      "stockMinimo": 300,
+      "bodega": "Bodega de Producto Terminado",
+      "stockActual": 1000,
+      "fechaCreacion": "2026-05-26"
+    },
+    {
+      "id": "P11",
+      "nombre": "Galleta Soda Integral x 250 g",
+      "categoria": "Producto Terminado",
+      "linea": "Línea Soda",
+      "unidad": "unidades",
+      "stockMinimo": 300,
+      "bodega": "Bodega de Producto Terminado",
+      "stockActual": 150,
+      "fechaCreacion": "2026-05-26"
+    },
+    {
+      "id": "P12",
+      "nombre": "Galleta de Chocolate Rellena x 180 g",
+      "categoria": "Producto Terminado",
+      "linea": "Línea Chocolate",
+      "unidad": "unidades",
+      "stockMinimo": 300,
+      "bodega": "Bodega de Producto Terminado",
+      "stockActual": 100,
+      "fechaCreacion": "2026-05-26"
+    }
+  ],
+  "movimientos": [
+    {
+      "id": "M01",
+      "productoId": "P01",
+      "tipo": "entrada",
+      "cantidad": 300,
+      "fecha": "2026-05-26T08:10:00",
+      "responsable": "Andrés Martínez",
+      "motivo": "Recepción de proveedor (Molinos del Valle)"
+    },
+    {
+      "id": "M02",
+      "productoId": "P02",
+      "tipo": "entrada",
+      "cantidad": 200,
+      "fecha": "2026-05-26T08:25:00",
+      "responsable": "Andrés Martínez",
+      "motivo": "Recepción de proveedor (Azucarera Nacional)"
+    },
+    {
+      "id": "M03",
+      "productoId": "P04",
+      "tipo": "entrada",
+      "cantidad": 150,
+      "fecha": "2026-05-27T07:50:00",
+      "responsable": "Laura Gómez",
+      "motivo": "Recepción de proveedor de avena"
+    },
+    {
+      "id": "M04",
+      "productoId": "P03",
+      "tipo": "salida",
+      "cantidad": 35,
+      "fecha": "2026-05-27T09:15:00",
+      "responsable": "Andrés Martínez",
+      "motivo": "Consumo en producción - Lote AV-118 (Línea Avena)"
+    },
+    {
+      "id": "M05",
+      "productoId": "P01",
+      "tipo": "salida",
+      "cantidad": 120,
+      "fecha": "2026-05-27T09:20:00",
+      "responsable": "Andrés Martínez",
+      "motivo": "Consumo en producción - Lote AV-118 (Línea Avena)"
+    },
+    {
+      "id": "M06",
+      "productoId": "P04",
+      "tipo": "salida",
+      "cantidad": 90,
+      "fecha": "2026-05-27T09:25:00",
+      "responsable": "Andrés Martínez",
+      "motivo": "Consumo en producción - Lote AV-118 (Línea Avena)"
+    },
+    {
+      "id": "M07",
+      "productoId": "P09",
+      "tipo": "entrada",
+      "cantidad": 1800,
+      "fecha": "2026-05-27T15:40:00",
+      "responsable": "Andrés Martínez",
+      "motivo": "Lote AV-118 finalizado y empacado"
+    },
+    {
+      "id": "M08",
+      "productoId": "P07",
+      "tipo": "salida",
+      "cantidad": 1800,
+      "fecha": "2026-05-27T15:45:00",
+      "responsable": "Andrés Martínez",
+      "motivo": "Empaque de Lote AV-118"
+    },
+    {
+      "id": "M09",
+      "productoId": "P05",
+      "tipo": "entrada",
+      "cantidad": 120,
+      "fecha": "2026-05-29T08:00:00",
+      "responsable": "Laura Gómez",
+      "motivo": "Recepción de proveedor de chocolate"
+    },
+    {
+      "id": "M10",
+      "productoId": "P01",
+      "tipo": "salida",
+      "cantidad": 100,
+      "fecha": "2026-05-30T08:30:00",
+      "responsable": "Laura Gómez",
+      "motivo": "Consumo en producción - Lote CH-203 (Línea Chocolate)"
+    },
+    {
+      "id": "M11",
+      "productoId": "P05",
+      "tipo": "salida",
+      "cantidad": 60,
+      "fecha": "2026-05-30T08:35:00",
+      "responsable": "Laura Gómez",
+      "motivo": "Consumo en producción - Lote CH-203 (Línea Chocolate)"
+    },
+    {
+      "id": "M12",
+      "productoId": "P03",
+      "tipo": "salida",
+      "cantidad": 25,
+      "fecha": "2026-05-30T08:40:00",
+      "responsable": "Laura Gómez",
+      "motivo": "Consumo en producción - Lote CH-203 (Línea Chocolate)"
+    },
+    {
+      "id": "M13",
+      "productoId": "P12",
+      "tipo": "entrada",
+      "cantidad": 1400,
+      "fecha": "2026-05-30T16:10:00",
+      "responsable": "Laura Gómez",
+      "motivo": "Lote CH-203 finalizado y empacado"
+    },
+    {
+      "id": "M14",
+      "productoId": "P08",
+      "tipo": "salida",
+      "cantidad": 120,
+      "fecha": "2026-05-30T16:15:00",
+      "responsable": "Laura Gómez",
+      "motivo": "Empaque de Lote CH-203 en cajas"
+    },
+    {
+      "id": "M15",
+      "productoId": "P02",
+      "tipo": "salida",
+      "cantidad": 80,
+      "fecha": "2026-06-02T08:05:00",
+      "responsable": "Sandra Ruiz",
+      "motivo": "Consumo en producción - Lote SO-077 (Línea Soda)"
+    },
+    {
+      "id": "M16",
+      "productoId": "P01",
+      "tipo": "salida",
+      "cantidad": 140,
+      "fecha": "2026-06-02T08:10:00",
+      "responsable": "Sandra Ruiz",
+      "motivo": "Consumo en producción - Lote SO-077 (Línea Soda)"
+    },
+    {
+      "id": "M17",
+      "productoId": "P11",
+      "tipo": "entrada",
+      "cantidad": 1600,
+      "fecha": "2026-06-02T16:00:00",
+      "responsable": "Sandra Ruiz",
+      "motivo": "Lote SO-077 finalizado y empacado"
+    },
+    {
+      "id": "M18",
+      "productoId": "P09",
+      "tipo": "salida",
+      "cantidad": 1500,
+      "fecha": "2026-06-05T10:00:00",
+      "responsable": "Andrés Martínez",
+      "motivo": "Despacho a bodega central para distribución"
+    },
+    {
+      "id": "M19",
+      "productoId": "P10",
+      "tipo": "entrada",
+      "cantidad": 1000,
+      "fecha": "2026-06-08T15:30:00",
+      "responsable": "Laura Gómez",
+      "motivo": "Lote WA-051 finalizado y empacado (Línea Wafer)"
+    },
+    {
+      "id": "M20",
+      "productoId": "P06",
+      "tipo": "salida",
+      "cantidad": 8,
+      "fecha": "2026-06-08T09:00:00",
+      "responsable": "Laura Gómez",
+      "motivo": "Consumo en producción - Lote WA-051 (Línea Wafer)"
+    },
+    {
+      "id": "M21",
+      "productoId": "P12",
+      "tipo": "salida",
+      "cantidad": 1300,
+      "fecha": "2026-06-10T11:00:00",
+      "responsable": "Sandra Ruiz",
+      "motivo": "Despacho a cliente mayorista"
+    },
+    {
+      "id": "M22",
+      "productoId": "P03",
+      "tipo": "entrada",
+      "cantidad": 50,
+      "fecha": "2026-06-12T08:00:00",
+      "responsable": "Andrés Martínez",
+      "motivo": "Recepción de proveedor (compra de emergencia)"
+    },
+    {
+      "id": "M23",
+      "productoId": "P11",
+      "tipo": "salida",
+      "cantidad": 1450,
+      "fecha": "2026-06-14T10:30:00",
+      "responsable": "Sandra Ruiz",
+      "motivo": "Despacho a bodega central para distribución"
+    },
+    {
+      "id": "M24",
+      "productoId": "P05",
+      "tipo": "salida",
+      "cantidad": 70,
+      "fecha": "2026-06-16T08:20:00",
+      "responsable": "Laura Gómez",
+      "motivo": "Consumo en producción - Lote CH-204 (Línea Chocolate)"
+    }
+  ],
+  "meta": {
+    "siguienteIdProducto": 13,
+    "siguienteIdMovimiento": 25
+  }
+}

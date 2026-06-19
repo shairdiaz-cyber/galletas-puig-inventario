@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galletas Puig · Control de Inventario</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <div class="cabecera__marca">
+      <span class="cabecera__logo">GP</span>
+      <div>
+        <h1 class="cabecera__titulo">Galletas Puig</h1>
+        <p class="cabecera__subtitulo">Control de inventario · Planta de producción</p>
+      </div>
+    </div>
+
+    <nav class="cabecera__nav" id="nav-principal">
+      <button class="nav__tab nav__tab--activo" data-vista="dashboard">Tablero</button>
+      <button class="nav__tab" data-vista="productos">Productos</button>
+      <button class="nav__tab" data-vista="movimientos">Movimientos</button>
+    </nav>
+
+    <div class="cabecera__turno">
+      <label for="input-responsable">Supervisor de turno</label>
+      <input type="text" id="input-responsable" placeholder="Tu nombre">
+    </div>
+  </header>
+
+  <main class="contenido">
+
+    <!-- ===================== DASHBOARD ===================== -->
+    <section class="vista" id="vista-dashboard">
+      <div class="vista__encabezado">
+        <h2>Tablero del turno</h2>
+        <p class="vista__fecha" id="fecha-actual"></p>
+      </div>
+
+      <div class="tarjetas-resumen" id="tarjetas-resumen">
+        <!-- generado por dashboard.js -->
+      </div>
+
+      <div class="panel-doble">
+        <div class="panel">
+          <h3 class="panel__titulo">Productos por debajo del mínimo</h3>
+          <div id="lista-bajo-minimo" class="lista-alertas">
+            <!-- generado por dashboard.js -->
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3 class="panel__titulo">Últimos movimientos registrados</h3>
+          <div id="lista-movimientos-recientes" class="lista-tiquetes lista-tiquetes--compacta">
+            <!-- generado por dashboard.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRODUCTOS ===================== -->
+    <section class="vista vista--oculta" id="vista-productos">
+      <div class="vista__encabezado">
+        <h2>Productos en inventario</h2>
+        <button class="boton boton--primario" id="btn-mostrar-form-producto">+ Nuevo producto</button>
+      </div>
+
+      <form class="formulario formulario--oculto" id="form-producto">
+        <h3 class="formulario__titulo">Registrar nuevo producto</h3>
+        <div class="formulario__grid">
+          <label>Nombre
+            <input type="text" id="prod-nombre" required placeholder="Ej: Galleta de Vainilla x 200 g">
+          </label>
+          <label>Categoría
+            <select id="prod-categoria" required></select>
+          </label>
+          <label>Línea de producción
+            <select id="prod-linea" required></select>
+          </label>
+          <label>Unidad de medida
+            <select id="prod-unidad" required></select>
+          </label>
+          <label>Stock mínimo
+            <input type="number" id="prod-stock-minimo" min="0" step="1" required placeholder="0">
+          </label>
+          <label>Bodega
+            <input type="text" id="prod-bodega" placeholder="Ej: Bodega de Insumos">
+          </label>
+        </div>
+        <p class="formulario__error" id="prod-error"></p>
+        <div class="formulario__acciones">
+          <button type="button" class="boton boton--secundario" id="btn-cancelar-producto">Cancelar</button>
+          <button type="submit" class="boton boton--primario">Guardar producto</button>
+        </div>
+      </form>
+
+      <div class="filtros">
+        <select id="filtro-categoria">
+          <option value="">Todas las categorías</option>
+        </select>
+        <select id="filtro-linea">
+          <option value="">Todas las líneas</option>
+        </select>
+        <label class="filtros__check">
+          <input type="checkbox" id="filtro-bajo-minimo">
+          Solo bajo mínimo
+        </label>
+      </div>
+
+      <div class="tabla-contenedor">
+        <table class="tabla" id="tabla-productos">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Categoría</th>
+              <th>Línea</th>
+              <th>Stock actual</th>
+              <th>Stock mínimo</th>
+              <th>Bodega</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tabla-productos-cuerpo">
+            <!-- generado por productos.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===================== MOVIMIENTOS ===================== -->
+    <section class="vista vista--oculta" id="vista-movimientos">
+      <div class="vista__encabezado">
+        <h2>Entradas y salidas de inventario</h2>
+      </div>
+
+      <form class="formulario" id="form-movimiento">
+        <h3 class="formulario__titulo">Registrar movimiento</h3>
+        <div class="formulario__grid">
+          <label>Producto
+            <select id="mov-producto" required></select>
+          </label>
+          <label>Tipo de movimiento
+            <select id="mov-tipo" required>
+              <option value="entrada">Entrada</option>
+              <option value="salida">Salida</option>
+            </select>
+          </label>
+          <label>Cantidad
+            <input type="number" id="mov-cantidad" min="0.01" step="0.01" required placeholder="0">
+          </label>
+          <label>Motivo / observación
+            <input type="text" id="mov-motivo" placeholder="Ej: Consumo en producción - Lote AV-120">
+          </label>
+        </div>
+        <p class="formulario__ayuda" id="mov-stock-disponible"></p>
+        <p class="formulario__error" id="mov-error"></p>
+        <div class="formulario__acciones">
+          <button type="submit" class="boton boton--primario">Registrar movimiento</button>
+        </div>
+      </form>
+
+      <div class="filtros">
+        <select id="filtro-mov-producto">
+          <option value="">Todos los productos</option>
+        </select>
+        <select id="filtro-mov-tipo">
+          <option value="">Entradas y salidas</option>
+          <option value="entrada">Solo entradas</option>
+          <option value="salida">Solo salidas</option>
+        </select>
+      </div>
+
+      <div class="lista-tiquetes" id="lista-movimientos">
+        <!-- generado por movimientos.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    Sistema de Inventario · Galletas Puig — Proyecto académico, Lenguaje de Programación 3
+  </footer>
+
+  <script src="../shared/constantes.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/productos.js"></script>
+  <script src="js/movimientos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

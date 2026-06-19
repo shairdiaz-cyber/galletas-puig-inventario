@@ -1,0 +1,13 @@
+{
+  "name": "galletas-puig-inventario-backend",
+  "version": "1.0.0",
+  "description": "API REST del Sistema de Inventario de Galletas Puig. Construida con el módulo http nativo de Node.js, sin dependencias externas.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}
